@@ -849,7 +849,7 @@ public class SlidingUpPanelLayout extends ViewGroup {
             final int childLeft = paddingLeft + lp.leftMargin;
             final int childRight = childLeft + child.getMeasuredWidth();
             child.layout(childLeft, childTop, childRight, childBottom);//这句话执行以后布局参数才改变
-            if (child == mSlideableView) {
+            if (child == mSlideableView) {    //panel处于anchor状态时，panel内嵌的view能够滑动的关键代码
                 int height = getMeasuredHeight() - child.getTop() - mPanelHeight;
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, height);
                 ((ViewGroup) child).getChildAt(1).setLayoutParams(layoutParams);
